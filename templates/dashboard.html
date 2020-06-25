@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{%block header%}
+
+ <style>  
+     body{
+      background-image: url(https://wallpapercave.com/wp/wp5035175.jpg);
+      background-size: 100%;
+      
+     }
+     .card{
+     	float: right; 
+     	margin: 10px;
+     }
+
+     .list-group li:hover {
+     	background-color: #42aaf5;
+     	color: #fff;
+     	transform: scale(1.1);
+     }
+     .navbar{
+     	background-color: #fff !important;
+      
+     }
+     div.card-header{
+     	background-color: #47abba;
+     	color: white;
+     	font-family: Courier New;
+
+     }
+ </style>
+{%endblock%}
+
+
+{%block body%}
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/deer-art-print-navy-blue-deer-poster-deer-head-painting-home-decor-minimalist-silhouette-part-2-joanna-szmerdt.jpg" width="50" height="50">
+    <span>Hello {{name}}, Welcome to The Country Club</span>
+  </a>
+</nav>
+<div class="card" style="width:18rem;">
+<div class="card-header">
+	Activities on {{date}}
+</div>
+<ul class="list-group list-group-flush">
+{%for activity in activities%}
+<li class="list-group-item">{{activity}}</li>
+{%endfor%}
+</ul>
+</div>
+{%endblock%}
